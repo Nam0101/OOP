@@ -19,4 +19,20 @@ public class TestPassingParameter{
         dvd.setTitle(title);
         dvd  = new DigitalVideoDis(oldTitle);
     }
+    public static void swap(DigitalVideoDisc dvd1,DigitalVideoDisc dvd2){
+        String title1=dvd1.getTitle();
+        String category1 = dvd1.getCategory();
+        String director1 = dvd1.getDirector();
+        int length1=dvd1.getLength();
+        float cost1 = dvd1.getCost();
+        String title2=dvd2.getTitle();
+        String category2 = dvd2.getCategory();
+        String director2 = dvd2.getDirector();
+        int length2=dvd2.getLength();
+        float cost2 = dvd2.getCost();
+
+        dvd1= new DigitalVideoDisc(title2,category2,director2,length2,cost2);
+        dvd2= new DigitalVideoDisc(title1,category1,director1,length1,cost1);
+
+    }
 }
