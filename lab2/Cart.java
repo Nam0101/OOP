@@ -1,4 +1,3 @@
-import java.util.*;
 
 public class Cart {
 	public static final int MAX_NUMBERS_ORDERED = 20;
@@ -83,7 +82,23 @@ public class Cart {
 		}
 		return null;
 	}
-
+	public DigitalVideoDisc findByID(int id){
+		for (int i = 0; i < qtyOrdered; i++) {
+			if (itemsOdered[i].getID()==id) {
+				return itemsOdered[i];
+			}
+		}
+		return null;
+	}
+	public void print() {
+		System.out.println("***********************CART***********************");
+		System.out.println("Ordered Items:");
+		for(int i=0;i<qtyOrdered;i++) {
+			System.out.println("DVD - "+itemsOdered[i].getTitle() +" - " +itemsOdered[i].getCategory()+" - "+itemsOdered[i].getDirector()+" - "+itemsOdered[i].getLength()+": "+itemsOdered[i].getCost());
+		}
+		System.out.println("Total cost: "+String.format("%.2f", this.totalCost()));
+		System.out.println("***************************************************");
+	}
 	public void display() {
 		for (int i = 0; i < qtyOrdered; i++) {
 			System.out.println("Title:" + itemsOdered[i].getTitle());

@@ -74,6 +74,9 @@ public class Aims {
 					System.out.println("Goodbye!");
 					cont = false;
 					break;
+				case 7:
+					anOrder.print();
+					break;
 				default:
 					System.out.println("Wrong cmd");
 					break;
